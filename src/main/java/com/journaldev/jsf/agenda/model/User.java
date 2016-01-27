@@ -1,15 +1,13 @@
 package main.java.com.journaldev.jsf.agenda.model;
 
-import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
-import javax.faces.context.FacesContext;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 
 @ManagedBean(name="user")
@@ -46,6 +44,10 @@ public class User {
 		this.created_date = created_date;
 	}
 
+	
+	
+	
+	
 	public String add()
 	{
 		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
