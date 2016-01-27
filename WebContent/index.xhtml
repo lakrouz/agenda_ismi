@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Page d'accueil</title>
+</h:head>
+<h:body>
+	<div>
+		<div>
+
+			<h:dataTable value="#{MyClassjsf_test.listUsers}" var="u"
+				styleClass="order-table" headerClass="order-table-header"
+				rowClasses="order-table-odd-row,order-table-even-row">
+
+				<h:column>
+					<!-- column header -->
+					<f:facet name="header">Nom</f:facet>
+					<!-- row record -->
+    				#{u.nom}
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Prenom</f:facet>
+    				#{u.prenom}
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">Matricule</f:facet>
+    				#{u.matricule}
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">Role</f:facet>
+    				utilisateur
+    			</h:column>
+
+			</h:dataTable>
+
+
+		</div>
+	</div>
+	<br />
+	<br />
+	<h:form>
+		<div>#{MyClassjsf_test.taritementQuiChercheEnBase()}</div>
+		<div>
+			"#{MyClassjsf_test.s1}"
+			<h:commandLink id="link1" value="VALUE"
+				action="#{MyClassjsf_test.methodePourIndex()}" />
+		</div>
+		<div>
+			<h:commandLink action="admin.xhtml" value=""> Login </h:commandLink>
+		</div>
+		<div>
+			<h:commandButton action="admin.xhtml" value="Move to admin.xhtml" />
+		</div>
+	</h:form>
+</h:body>
+</html>
+
