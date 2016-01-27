@@ -4,15 +4,19 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+
+import org.apache.log4j.Logger;
 
 import main.java.com.journaldev.jsf.agenda.model.Utilisateur;
 
 @ManagedBean(name = "MyClassjsf_test")
 @SessionScoped
 public class MyClassjsf_test implements Serializable {
-
+	
+	final static Logger logger = Logger.getLogger(MyClassjsf_test.class);
 	private static final long serialVersionUID = -6913972022251814607L;
 
 	private String s1 = "Contenu de l'attribut!!";
@@ -46,20 +50,35 @@ public class MyClassjsf_test implements Serializable {
 	}
 	
 	public String methodePourIndex(){
-		
+		logger.debug("");
 		System.out.println("ici je me le code a executer lors de l'appel à cette methode");
-		
+		logger.error("message d'erreur");
 		return "admin.xhtml";
 	}
 	
 	public List<String> taritementQuiChercheEnBase(){
-		System.out.println("L'appel à ce code va chercher en base");
+		logger.info("ceci est une info");
 		ArrayList<String> listeDeNoms = new ArrayList<String>();
 		listeDeNoms.add("Nom1");
 		listeDeNoms.add("Nom2");
 		listeDeNoms.add("Nom3");
 		listeDeNoms.add("Nom4");
+		logger.error("message d'erreur");
 		
+		try {
+			logger.error("message d'erreur");
+			
+			//un bout de code kelkonke
+			
+			
+			
+		} catch (Exception e) {
+			logger.error("message d'erreur");
+			logger.error(e.toString());
+		}
+		
+		
+		logger.warn("attention deconnexion n'est pas reussie");
 		return listeDeNoms;
 	}
 
